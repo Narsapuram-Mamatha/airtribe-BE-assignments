@@ -1,35 +1,43 @@
 # airtribe-BE-assignments
-assignments related to Airtribe-Backend-Launchpad
+Assignments related to Airtribe-Backend-Launchpad
+## Assignment 1
+### Task Manager API
 
-## Task Manager API
+#### Project Brief- RESTful API for a simple task manager application.
 
-Project brief
+#### Project Description:
 
-Build a RESTful API for a simple task manager application.
+In this project, A RESTful API using Node.js, Express.js, and NPM packages is built. The API will allow users to perform CRUD operations (Create, Read, Update, and Delete) on tasks. The tasks should have a title, description, and a flag for completion status. The API is tested using Postman.
 
-Project Description:
-
-In this project, we will create a RESTful API using Node.js, Express.js, and NPM packages. The API will allow users to perform CRUD operations (Create, Read, Update, and Delete) on tasks. The tasks should have a title, description, and a flag for completion status. The API should be tested using Postman or Curl.
-
-Set up a basic Node.js project with Express.js and other necessary NPM packages.
-
-Task schema:
-
-{
-  "id": 2,
-  "title": "Create a new project",
-  "description": "Create a new project using Magic",
-  "completed": false
+#### Task schema:
+```json
+{    
+    "id": 2, 
+    
+    "title": "Create a new project", 
+  
+    "description": "Create a new project using Magic", 
+  
+    "completed": false 
+  
 }
-Implement a RESTful API with the following endpoints:
+```
 
+A RESTful API with the following endpoints has been implemented:
+
+```
 GET /tasks: Retrieve all tasks.
-GET /tasks/:id: Retrieve a single task by its ID.
-POST /tasks: Create a new task.
-PUT /tasks/:id: Update an existing task by its ID.
-DELETE /tasks/:id: Delete a task by its ID.
-Use an in-memory data store (e.g., an array) to store the tasks.
-Implement proper error handling for invalid requests.
-Add input validation for task creation and updates. Validate that the title and description are not empty, and that the completion status is a boolean value.
 
-Test the API using Postman or Curl to ensure it works as expected.
+GET /tasks/:id: Retrieve a single task by its ID.
+
+POST /tasks: Create a new task.
+
+PUT /tasks/:id: Update an existing task by its ID.
+
+DELETE /tasks/:id: Delete a task by its ID.
+
+``` 
+Validations have been done accordingly to handle all the client-side and server-side issues with proper status codes.
+
+### Test Results
+![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/a277c1cf-2910-49af-a4ec-69951b215f54)
