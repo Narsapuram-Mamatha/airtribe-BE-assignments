@@ -1,43 +1,36 @@
-# airtribe-BE-assignments
-Assignments related to Airtribe-Backend-Launchpad
 ## Assignment 2
-### News-Aggregator API
+### News Aggregator  API
 
-#### Project Brief- RESTful API for a simple task manager application.
+#### Project Brief- RESTful API for news based on user preferences.
 
-#### Project Description:
+#### Project Description
 
-In this project, A RESTful API using Node.js, Express.js, and NPM packages is built. The API will allow users to perform CRUD operations (Create, Read, Update, and Delete) on tasks. The tasks should have a title, description, and a flag for completion status. The API is tested using Postman.
+In this project, A RESTful API using Node.js, Express.js, and NPM packages is built. This application implements user based login, register,  and news retrival based on preferences. 
 
-#### Task schema:
-```json
-{    
-    "id": 2, 
-    
-    "title": "Create a new project", 
-  
-    "description": "Create a new project using Magic", 
-  
-    "completed": false 
-  
-}
-```
 
 A RESTful API with the following endpoints has been implemented:
 
 ```
-GET /tasks: Retrieve all tasks.
+POST /users/signup: Register a new user.
 
-GET /tasks/:id: Retrieve a single task by its ID.
+POST /users/login: Log in a user.
 
-POST /tasks: Create a new task.
+GET /preferences: Retrieve the news preferences for the logged-in user.
 
-PUT /tasks/:id: Update an existing task by its ID.
+PUT /preferences: Update the news preferences for the logged-in user.
 
-DELETE /tasks/:id: Delete a task by its ID.
+GET /news: Fetch news articles based on the logged-in user's preferences.
 
-``` 
+```
+#### Prequisties
+* Run ``` npm install ``` to install all the required modules. 
+* Create environment variables ```API_SECRET``` \& ```API_KEY``` in the .env file in the root directory.
+#### Commands
+* Debug - ``` npx nodemon --inspect-brk app.js ```
+* Without debug -  ```nodemon app.js``` or ```node app.js```
+  
 Validations have been done accordingly to handle all the client-side and server-side issues with proper status codes.
 
 ### Test Results
-![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/a277c1cf-2910-49af-a4ec-69951b215f54)
+![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/d3a69661-b119-4161-ac2c-5f9ad2a56efb)
+
