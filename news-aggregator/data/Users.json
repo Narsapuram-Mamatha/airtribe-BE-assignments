@@ -1,0 +1,47 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "securePassword123",
+    "preferences": [
+      "preference1",
+      "preference12"
+    ]
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "password": "strongPassword456",
+    "preferences": [
+      "preference1",
+      "preference2"
+    ]
+  },
+  {
+    "name": "John Doe",
+    "email": "1234@example.com",
+    "password": "$2b$08$Uj1jzSD6kotPzyTY2Fdcke3TOU/7zoskO97Az522Qy1ikbM9WquGa",
+    "preferences": [
+      "preference1",
+      "preference2"
+    ]
+  },
+  {
+    "name": "Sample",
+    "email": "sample@example.com",
+    "password": "$2b$08$/BD1qpOuQiQhbaajKhsaieJ6TeSsXpPlJrSC6BXxswwAawGY1Rtza",
+    "preferences": [
+      "movies",
+      "comics"
+    ]
+  },
+  {
+    "name": "Clark Kent",
+    "email": "clark@superman.com",
+    "password": "$2b$08$r0OB/GQ.OzC1/4GeZVkAxeqEocLyQE7h.o8KqfbwZPT1Mr3ucRs.y",
+    "preferences": [
+      "movies",
+      "comics"
+    ]
+  }
+]
