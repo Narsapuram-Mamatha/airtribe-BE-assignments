@@ -23,7 +23,7 @@ A user can signup themselves using the post call ```POST /users/signup```.
 ###### Highlights
 * Hashing of password has been implemented.
 * All fields are marked as important.
-* All the users data is maintained in the data folder.  
+* All the users data is maintained in the data folder in Users.json file.  
 Example: 
 ![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/86c8856f-2f11-4883-b51f-519b93dacff7)
 
@@ -61,7 +61,7 @@ News based on the user preferences can be fetched with get call ```GET /news```.
 Example: 
 ![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/19756368-7e26-4d19-b536-27ea80fe80c2)
 
-### Prequisties
+### Prequisites
 * Run ``` npm install ``` to install all the required modules. 
 * Create environment variables ```API_SECRET``` \& ```API_KEY``` in the .env file in the root directory.
 * Get your API key from ```https://newsapi.org/``` by creating a new account if not exists.  
