@@ -1,15 +1,14 @@
-# airtribe-BE-assignments
-Assignments related to Airtribe-Backend-Launchpad
-## Assignment 1
-### Task Manager API
+# Task Manager API
 
-#### Project Brief- RESTful API for a simple task manager application.
+### Project Brief
 
-#### Project Description:
+RESTful API for a simple task manager application.
+
+### Project Description:
 
 In this project, A RESTful API using Node.js, Express.js, and NPM packages is built. The API will allow users to perform CRUD operations (Create, Read, Update, and Delete) on tasks. The tasks should have a title, description, and a flag for completion status. The API is tested using Postman.
 
-#### Task schema:
+## Task schema:
 ```json
 {    
     "id": 2, 
