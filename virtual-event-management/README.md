@@ -1,9 +1,10 @@
-## Assignment 3
-### Backend System for a Virtual Event Management Platform 
+# Assignment 3
+## Backend System for a Virtual Event Management Platform 
 
-#### Project Brief- A backend system for a virtual event management platform focusing on user registration, event scheduling, and participant management
+### Project Brief
+A backend system for a virtual event management platform focusing on user registration, event scheduling, and participant management
 
-#### Project Description:
+### Project Description:
 
 In this project, A RESTful API using Node.js, Express.js, and NPM packages is built. The API will allow users to perform CRUD operations (Create, Read, Update, and Delete) on tasks. The file system is used as memory. The API is tested using Postman. 
 
@@ -73,6 +74,13 @@ POST /events/:eventId/registration- Register for a event.
 PUT /events/registrations/:registrationId- Update registration Details. 
 DELETE /events/registrations/:registrationId- Cancel registration.
 
-``` 
+```
+### Prequisites
+* Run ``` npm install ``` to install all the required modules. 
+* Create environment variables ```API_SECRET``` \& ```API_KEY``` in the .env file in the root directory.
+* Get your API key from ```https://newsapi.org/``` by creating a new account if not exists.  
+### Commands
+* Debug - ``` npx nodemon --inspect-brk app.js ```
+* Without debug -  ```nodemon app.js``` or ```node app.js```
 Validations have been done accordingly to handle all the client-side and server-side issues with proper status codes.
 
