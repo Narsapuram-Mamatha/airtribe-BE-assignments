@@ -1,0 +1,50 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "Password465",
+    "role": "admin"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "password": "Password123",
+    "role": "organizer"
+  },
+  {
+    "name": "John Doe",
+    "email": "1234@example.com",
+    "password": "$2b$08$Uj1jzSD6kotPzyTY2Fdcke3TOU/7zoskO97Az522Qy1ikbM9WquGa",
+    "role": "organizer"
+  },
+  {
+    "name": "Sample",
+    "email": "sample@example.com",
+    "password": "$2b$08$/BD1qpOuQiQhbaajKhsaieJ6TeSsXpPlJrSC6BXxswwAawGY1Rtza",
+    "role": "user"
+  },
+  {
+    "name": "Clark Kent",
+    "email": "clark@superman.com",
+    "password": "$2b$08$WhXrIVn.mRezc4KFTr1zru8PyK5wOK1l2laFEsNouFaOVQl7eet/e",
+    "role": "user"
+  },
+  {
+    "name": "Mamatha",
+    "email": "nmamatha1808@example.com",
+    "password": "$2b$08$F.sD2ENCpnHSYdtxxhbDbu1zjz/HXdfp6Blnp4ZQ7E.PmXPZWgebi",
+    "role": "user"
+  },
+  {
+    "name": "Mamatha",
+    "email": "nmamatha1808@gmail.com",
+    "password": "$2b$08$qCgi8C7emmZeECg94JLFKewRxUEUDG1iTfNgykINjDgMEMzSsDjHO",
+    "role": "admin"
+  },
+  {
+    "name": "Sample",
+    "email": "sample@gmail.com",
+    "password": "$2b$08$rBi.6IgmeCEEGlKCyA0qY.9w94DkJCs4kfGNtuns8LpwCkAxr3Z6y",
+    "role": "organizer"
+  }
+]
