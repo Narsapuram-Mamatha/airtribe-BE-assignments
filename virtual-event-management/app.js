@@ -5,9 +5,13 @@ const authController = require('./src/controllers/AuthController')
 const adminController = require('./src/controllers/AdminController')
 const eventsController = require('./src/controllers/EventsController')
 const organizerController = require('./src/controllers/OrganizersController')
+const registrationManagementController = require('./src/controllers/RegistrationManagementController')
+
 const verifyToken =  require('./src/authJWT');
 const { verify } = require('jsonwebtoken');
+
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
 
@@ -30,13 +34,14 @@ app.get('/organizers/events', verifyToken.verifyOrganizer, eventsController.getE
 app.post('/events', verifyToken.verifyOrganizer, eventsController.addEvent);
 app.put('/events/:eventId', verifyToken.verifyOrganizer, eventsController.updateEvent);
 
-app.get('/events/:eventId/registrations', verifyToken.verifyOrganizer, eventsController.getEventRegistrations);
+//app.get('/events/:eventId/registrations', verifyToken.verifyOrganizer, eventsController.getEventRegistrations);
 
 // Event Endpoints User
 app.get('/users/events', verifyToken.verifyUser, eventsController.getAvailableEvents);
-app.post('/events/:eventId/registration', verifyToken.verifyUser, eventsController.eventRegistration);
-app.put('/events/:eventId/registrations/:registrationId', verifyToken.verifyUser, eventsController.updateEventRegistration);
-app.delete('/events/:eventId/registrations/:registrationId', verifyToken.verifyUser, eventsController.deleteEventRegistration);
+app.get('/users/registrations', verifyToken.verifyUser,registrationManagementController.getRegisteredEvents);
+app.post('/events/:eventId/registration', verifyToken.verifyUser, registrationManagementController.eventRegistration);
+app.put('/events/registrations/:registrationId', verifyToken.verifyUser, registrationManagementController.updateEventRegistration);
+app.delete('/events/registrations/:registrationId', verifyToken.verifyUser, registrationManagementController.deleteEventRegistration);
 
 
 app.listen(port, (err) => {

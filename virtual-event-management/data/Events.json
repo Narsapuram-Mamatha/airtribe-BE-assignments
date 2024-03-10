@@ -1,12 +1,32 @@
 [
-    {
-        "id":1,
-      "name": "Event 1",
-      "startDate": "2024-03-17",
-      "startTime":"10:00",
-      "endDate": "2024-03-17",
-      "endTime":"13:00",
-      "seats":30,
-      "category":"Technical"
-    }
+  {
+    "id": 1,
+    "name": "Techo-Hack",
+    "startDate": "2024-03-19",
+    "startTime": "11:00",
+    "endDate": "2024-03-19",
+    "endTime": "13:00",
+    "seats": 50,
+    "category": "Technical"
+  },
+  {
+    "id": 2,
+    "name": "Event 2",
+    "startDate": "2024-03-17",
+    "startTime": "10:00",
+    "endDate": "2024-03-17",
+    "endTime": "13:00",
+    "seats": 30,
+    "category": "Technical"
+  },
+  {
+    "id": 3,
+    "name": "Event 3",
+    "startDate": "2024-03-17",
+    "startTime": "10:00",
+    "endDate": "2024-03-17",
+    "endTime": "13:00",
+    "seats": 30,
+    "category": "Technical"
+  }
 ]

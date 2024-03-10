@@ -29,28 +29,7 @@ async function addUser(newUser) {
 }
 
 
-async function updateUserPreferences(email, newPreferences){
-  try{
-    const data = await fs.readFile(filePath, 'utf-8');
-    const users = JSON.parse(data);
-    const userIndex = users.findIndex(user => user.email === email);
-    if (userIndex !== -1) {
-      users[userIndex].preferences = newPreferences;
-      await fs.writeFile(filePath, JSON.stringify(users, null, 2), 'utf-8');
-      console.log('User preferences updated');
-      return true
-    }else{
-      console.log("User index not found");
-      return false
-    }
-      
-  }catch(err){
-    console.log(err);
-    throw err;
-  }
-}
-
 
 module.exports = {
-  getUsers, addUser,updateUserPreferences,
+  getUsers, addUser,
 };

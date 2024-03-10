@@ -1,5 +1,6 @@
 class Event {
-    constructor(name, startDate, startTime, endDate, endTime, seats, category) {
+    constructor(id, name, startDate, startTime, endDate, endTime, seats, category) {
+      this.id = id;
       this.name = name;
       this.startDate = startDate;
       this.startTime = startTime;

@@ -1,0 +1,18 @@
+[
+  {
+    "regid": 1,
+    "userid": 8,
+    "eventid": "2",
+    "email": "nmamatha1808@gmail.com",
+    "contact": "9023456780",
+    "status": "registered"
+  },
+  {
+    "regid": 2,
+    "userid": 8,
+    "eventid": "1",
+    "email": "nmamatha1808@example.com",
+    "contact": "1234567890",
+    "status": "registered"
+  }
+]

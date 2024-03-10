@@ -1,24 +1,26 @@
 # airtribe-BE-assignments
 Assignments related to Airtribe-Backend-Launchpad
-## Assignment 2
-### News-Aggregator API
+## Assignment 3
+### Backend System for a Virtual Event Management Platform 
 
-#### Project Brief- RESTful API for a simple task manager application.
+#### Project Brief- A backend system for a virtual event management platform focusing on user registration, event scheduling, and participant management
 
 #### Project Description:
 
 In this project, A RESTful API using Node.js, Express.js, and NPM packages is built. The API will allow users to perform CRUD operations (Create, Read, Update, and Delete) on tasks. The tasks should have a title, description, and a flag for completion status. The API is tested using Postman.
 
-#### Task schema:
+#### User schema:
 ```json
 {    
-    "id": 2, 
+    "id":3, 
+
+    "name": "John Doe", 
+
+    "email": "1234@example.com", 
+
+    "password": "$2b$08$Uj1jzSD6kotPzyTY2Fdcke3TOU/7zoskO97Az522Qy1ikbM9WquGa",
     
-    "title": "Create a new project", 
-  
-    "description": "Create a new project using Magic", 
-  
-    "completed": false 
+    "role": "organizer" 
   
 }
 ```
