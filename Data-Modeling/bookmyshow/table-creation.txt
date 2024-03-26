@@ -1,0 +1,44 @@
+create database bookmyshow;
+
+-- Create Theatre Table 
+CREATE TABLE Theatre (
+    TheatreID INT PRIMARY KEY AUTO_INCREMENT,
+    TheatreName VARCHAR(255) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    State VARCHAR(100) NOT NULL,
+    CONSTRAINT unique_theatre UNIQUE (TheatreName, Address, City, State)
+);
+
+-- Create Screen Table 
+CREATE TABLE Screen (
+    ScreenID INT PRIMARY KEY AUTO_INCREMENT,
+    TheatreID INT NOT NULL,
+    ScreenName VARCHAR(50) NOT NULL,
+    Capacity INT NOT NULL,
+    FOREIGN KEY (TheatreID) REFERENCES Theatre(TheatreID)
+);
+
+-- Create Movie Table 
+CREATE TABLE Movie (
+    MovieID INT PRIMARY KEY AUTO_INCREMENT,
+    MovieName VARCHAR(255) NOT NULL,
+    Genre VARCHAR(100),
+    ReleaseDate DATE,
+    Duration INT, -- in minutes
+    Languages VARCHAR(255), -- Comma-separated list of languages
+    ScreeningType ENUM('2D', '3D', '4D', '4DX', '3DX') -- Screening types including 4DX and 3DX
+);
+
+-- Create Show Table 
+CREATE TABLE MovieShow (
+    ShowID INT PRIMARY KEY AUTO_INCREMENT,
+    MovieID INT NOT NULL,
+    ScreenID INT NOT NULL,
+    ShowDate DATE,
+    ShowTime TIME,
+    CONSTRAINT fk_movie FOREIGN KEY (MovieID) REFERENCES Movie(MovieID),
+    CONSTRAINT fk_screen FOREIGN KEY (ScreenID) REFERENCES Screen(ScreenID),
+    CONSTRAINT unique_show UNIQUE (MovieID, ScreenID, ShowDate, ShowTime)
+);
+
