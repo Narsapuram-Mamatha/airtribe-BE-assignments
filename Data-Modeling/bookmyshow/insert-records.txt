@@ -1,0 +1,7 @@
+INSERT INTO Movie (MovieName, Genre, ReleaseDate, Duration, Languages, ScreeningType)
+VALUES
+    ('Bahubali: The Beginning', 'Action', '2015-07-10', 159, 'Telugu, Hindi', '2D'),
+    ('KGF Chapter 1', 'Action', '2018-12-21', 155, 'Kannada, Hindi', '2D'),
+    ('Dangal', 'Biography', '2016-12-23', 161, 'Hindi, English', '2D'),
+    ('Rangasthalam', 'Action Drama', '2018-03-30', 179, 'Telugu, Hindi', '2D'),
+    ('3 Idiots', 'Comedy Drama', '2009-12-25', 170, 'Hindi, English', '2D');
