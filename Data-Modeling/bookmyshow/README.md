@@ -3,7 +3,7 @@
 
 
 ### Project Brief
-Bookmyshow is a ticketing platform where you can book tickets for a movie show. The image attached represents that for a given theatre we can see the next 7 dates. As one chooses the date, we get list of all shows running in that theatre along with the show timings.  
+Bookmyshow is a ticketing platform where you can book tickets for a movie show. The image attached represents that for a given theatre we can see the next 7 dates. As one chooses the date, we get a list of all shows running in that theatre along with the show timings.  
 
 ![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/6a6850df-089d-40ff-b5ef-084ccb2bf20c)
 
@@ -42,7 +42,7 @@ To create the entities run the queries from ``` table-creation.txt ```
 4. Theatre
    ![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/5e988774-8be3-4e65-ab98-6126c0663276)
 
-##### Run the ```insert-records.txt``` file to insert some sample queries into the tables.
+##### Run the ```insert-records.txt``` file to insert some sample records into the tables.
  
 #### Sub-Task 2
 Query to list down all the shows on a given date at a given theatre along with their respective show timings.
