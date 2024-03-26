@@ -16,7 +16,7 @@ Bookmyshow is a ticketing platform where you can book tickets for a movie show. 
   ```
 
 #### Sub-Task 1
-List all the entities, their attributes  the table structures for the scenario mentioned in the previous slide.  
+List all the entities, their attributes the table structures for the scenario mentioned in the previous slide.  
 SQL queries required to create these tables along with a few sample entries are attached. 
 
 ##### Entities
@@ -42,9 +42,13 @@ To create the entities run the queries from ``` table-creation.txt ```
 4. Theatre
    ![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/5e988774-8be3-4e65-ab98-6126c0663276)
 
-##### Run the ```insert-records.txt``` file to insert some sample records into the tables.
- 
-#### Sub-Task 2
-Query to list down all the shows on a given date at a given theatre along with their respective show timings.
-Run the select Query mentioned in the ``` query.txt``` file.
+##### Run the ```insert-records.txt``` file to insert some sample records into the tables.  
 
+#### Sub-Task 2
+Query to list all the shows on a given date at a given theatre and their respective show timings.
+Run the select Query mentioned in the ``` query.txt``` file. 
+
+Here is the output of the select query.  
+![image](https://github.com/Narsapuram-Mamatha/airtribe-BE-assignments/assets/149604307/d0da425a-4b88-4013-93b0-b1a5c2e658dd)
+
+ 
