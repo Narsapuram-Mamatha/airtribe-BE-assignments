@@ -1,1 +1,6 @@
-select * from Movie;
+SELECT M.MovieName, S.ScreenName, MS.ShowTime 
+FROM MovieShow MS 
+JOIN Movie M ON MS.MovieID = M.MovieID 
+JOIN Screen S ON MS.ScreenID = S.ScreenID 
+JOIN Theatre T ON S.TheatreID = T.TheatreID 
+where MS.ShowDate = '2024-03-28' and T.TheatreName = 'Cinema Hall';
