@@ -1,121 +1,58 @@
-const express = require('express');
-const fs = require('fs');
-const tasksData = require('./task.json');
-const Validator = require('./helpers/validator');
+const express = require("express");
+const multer = require('multer');
+
+const { connectDB } = require("../task-master/src/config/db");
+const authController = require("../task-master/src/controllers/AuthController");
+const userController = require("../task-master/src/controllers/UserController");
+const teamController = require("../task-master/src/controllers/TeamController");
+const taskController = require("../task-master/src/controllers/TaskController");
+require("dotenv").config();
+
 const app = express();
 const port = 3000;
+const verifyToken = require("./src/authJWT");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-    return res.status(200).send("Task Manager Assignment")
-});
+connectDB();
 
-app.get('/tasks', (req, res) => {
-    if (tasksData.tasks.length > 0) {
-        return res.status(200).send(tasksData.tasks);
-    }
-    return res.status(500).send("No tasks data found");
-});
+//Authentication Endpoint
+app.post("/signup", authController.addUser);
+app.get("/login", authController.login);
+app.patch("/users/update", verifyToken.verifyUser, userController.updateUser);
+app.post("/logout", verifyToken.verifyUser, verifyToken.logout);
 
-app.get('/tasks/:id', (req, res) => {
-    const tasks = tasksData.tasks;
-    const taskId = req.params.id;
-    let filteredTask = tasks.filter(task => task.id == taskId);
-    if (filteredTask.length === 0) {
-        return res.status(404).send("invalid id");
-    }
-    return res.status(200).send(filteredTask[0]);
-});
+//Task
+app.post("/users/tasks", verifyToken.verifyUser, taskController.createTask);
+app.get("/users/tasks", verifyToken.verifyUser, taskController.getAllTask);
+app.get("/users/tasks/:id", verifyToken.verifyUser, taskController.getTaskById);
+app.patch("/users/tasks/:id", verifyToken.verifyUser, taskController.updateTaskById);
+app.patch("/users/tasks/:id/completed", verifyToken.verifyUser,taskController.markTaskCompleted);
+app.patch("/users/tasks/:id/uploads", verifyToken.verifyUser,upload.any(),taskController.uploadAttachments);
 
-app.post('/tasks', (req, res) => {
-    const userProvidedDetails = req.body;
-    
-    if(!userProvidedDetails.hasOwnProperty("id")){
-        userProvidedDetails.id = tasksData.tasks.length + 1;
-    }
-    if (Validator.validateTaskInfo(userProvidedDetails).status == true) {
-        
-        let dataModified = tasksData;
-        dataModified.tasks.push(userProvidedDetails);
-        fs.writeFile('./task.json', JSON.stringify(dataModified),
-            { encoding: 'utf8', flag: 'w' }, (err, data) => {
-                if (err) {
-                    return res.status(500).send("Something went wrong while writing the task please recreate the task");
-                } else {
-                    return res.status(201).send("Task has been successfully validated and created");
-                }
+//Team
+app.post("/users/teams", verifyToken.verifyUser, teamController.createTeam);
 
-            });
-    
-} else {
-    return res.status(400).send(Validator.validateTaskInfo(userProvidedDetails));
 
-}
-});
-
-app.put('/tasks/:id', (req, res) => {
-    
-    const userProvidedDetails = req.body;
-    const id = req.params.id;
-    
-    let filteredTask = tasksData.tasks.filter(task => task.id == id);
-    if(filteredTask.length >  0){
-       
-        if( Validator.validateDataTypes(userProvidedDetails).status === true) {
-            let dataModified = tasksData;
-            const indexofTask = dataModified.tasks.findIndex(obj => obj.id === id);
-            let taskToChange = dataModified.tasks[indexofTask];
-            if (taskToChange) {
-                taskToChange.title = userProvidedDetails.title;
-                taskToChange.description = userProvidedDetails.description;
-                taskToChange.completed = userProvidedDetails.completed;
-            }
-
-            fs.writeFile('./task.json', JSON.stringify(dataModified),
-                { encoding: 'utf8', flag: 'w' }, (err, data) => {
-                    if (err) {
-                        return res.status(500).send("Something went wrong while writing the task please recreate the task");
-                    } else {
-                        return res.status(200).send("Task has been successfully validated and updated");
-                    }
-
-                });
-        }else{
-            return res.status(400).send("invalid data");
-        }
-
-    }else{
-        return res.status(404).send("Id does not exist");
-    }
-});
-
-app.delete('/tasks/:id', (req, res) => {
-    let dataModified = tasksData;
-    const taskId = req.params.id
-
-    const indexofTask = dataModified.tasks.findIndex(obj => obj.id == taskId);
-
-    if (indexofTask < 0) {
-        return res.status(404).send("No appropriate task found");
-    } else {
-        dataModified.tasks.splice(indexofTask, 1);
-        //fs.writeFile('./task.json', JSON.stringify(dataModified),
-          // { encoding: 'utf8', flag: 'w' }, (err, data) => { });
-        return res.status(200).send("task has been deleted successfully");
-
-    }
-
+app.get("/", (req, res) => {
+  return res.status(200).send("Task Master Collaborative project");
 });
 
 app.listen(port, (err) => {
-    if (err) {
-        return console.log('Something bad happened', err);
-    }
-    console.log(`Server is listening on ${port}`);
+  if (err) {
+    return console.log("Something bad happened", err);
+  }
+  console.log(`Server is listening on ${port}`);
 });
-
-
 
 module.exports = app;
